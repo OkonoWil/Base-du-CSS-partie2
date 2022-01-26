@@ -1,0 +1,193 @@
+@font-face{
+  font-family: "font1";
+  src : url(./assets/CormorantGaramond-Bold.ttf);
+}
+
+:root{
+  --color1:rgb(27, 29, 26);
+  --color2:rgb(88, 247, 180);
+  --color3:rgb(16, 247, 47);
+  --color4:rgb(236, 252, 191);
+}
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  background: url(./assets/bg.jpg) no-repeat fixed center/cover;
+  font-family: 'Times New Roman', Times, serif;
+  height: 100vh;
+  margin: 8px;
+  color: var(--color1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  background-color: rgba(0, 0, 0, 0.267);
+  color: white;
+  width: calc(100% -50px);
+  padding: 10px;
+  box-shadow: 9px -19px 16px 1px #3e3e3e;
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+}
+
+.card:before {
+  content: "\2730";
+  position: absolute;
+  top: 5px;
+  right: 4%;
+  font-size: 2rem;
+}
+
+h1{
+  margin-bottom: 24px;
+  position: relative;
+}
+
+h1::after{
+  content:"";
+  position: absolute;
+  bottom: -14px;
+  width: 100%;
+  height: 1px;
+  left: 50%;
+  background-color: var(--color4);
+  transform: translateX(-50%) scaleX(0);
+  animation: h1anim 5s forwards;
+}
+
+@keyframes h1anim {
+  100%{
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.polygon-container{
+  place-self: center left;
+
+}
+
+.polygon{
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  background-color: aqua;
+  background: linear-gradient(135deg, var(--color4) 10%, var(--color1) 100%);
+  height: 100px;
+  width: 100px;
+  margin-right: 8%;
+}
+
+p{
+  line-height: 26px;
+  margin: 5px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-align: justify;
+}
+
+.checkbox-container{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0 30px;
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+input[type="checkbox"]:checked + label{
+  background-color: var(--color1);
+}
+
+label{
+  cursor: pointer;
+  border: 1px solid var(--color4);
+  background-color: #3e3e3e;
+  padding: 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+  user-select: none;
+}
+
+label:first-of-type:hover{
+  animation: label1 1s;
+}
+
+@keyframes label1 {
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+.e-mail{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.e-mail input{
+  padding: 10px;
+  border-radius: 70px;
+  outline: none;
+  border: 3px solid transparent;
+  transition: 0.3s;
+  font-size: 1.2rem;
+  text-align: center;
+  width: 35%;
+  max-width: 500px;
+  min-width: 200px;
+}
+
+input[type="text"]:focus{
+  background-color: transparent;
+  border: 3px solid var(--color4);
+  color: var(--color4);
+  border-radius: 10px;
+}
+
+button{
+  cursor: pointer;
+  background-color: var(--color4);
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 150px;
+  margin: 0 auto;
+  display: block;
+  transition: 0.5s;
+}
+
+button:hover{
+  letter-spacing: 3px;
+}
+
+button:hover + a,
+a:hover{
+  transition: 0.5s;
+  opacity: 1;
+}
+
+a{
+  color: var(--color4);
+  display: block;
+  text-align: center;
+  opacity: 0;
+}
+
+a:visited{
+  color: var(--color2);
+}
