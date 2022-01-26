@@ -90,10 +90,10 @@ h1::after{
 p{
   line-height: 26px;
   margin: 5px;
-  display: -webkit-box;
+  /*display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
-  overflow: hidden;
+  overflow: hidden;*/
   text-align: justify;
 }
 
@@ -175,6 +175,14 @@ button:hover{
   letter-spacing: 3px;
 }
 
+ul{
+  display: block;
+}
+li{
+  display: inline-block;
+  justify-content:space-between;
+}
+
 button:hover + a,
 a:hover{
   transition: 0.5s;
@@ -185,6 +193,9 @@ a{
   color: var(--color4);
   display: block;
   text-align: center;
+}
+
+.a1{
   opacity: 0;
 }
 
